@@ -8,7 +8,7 @@ Team : 5
 
 ### Lab Description: ###
 
-  In the first lab of the course we got familiar with the use of assembly in ARM microcontrollers and we wrote some code at it using Keil's tools. More specifically, at first we've been told to implement a basic main() routine in C language in which we should provide with dynamical way the alpharithmetic which will be controlled with the help of UART. Next step was to implement an assembly routine which would compute a hash from a string of characters that the user has given based on some assumptions. After that we had to implement another assembly routine which would compute the onedigit of the hash and its factional, while later it will store its value in memory and will return it in main.The hash will be calculated by the below ***lookup_table***.
+  In the first lab of the course we got familiar with the use of assembly in ARM microcontrollers and we wrote some code at it using Keil's tools. More specifically, at first we've been told to implement a basic main() routine in C language in which we should provide with dynamical way the alpharithmetic which will be controlled with the help of UART. Next step was to implement an assembly routine which would compute a hash from a string of characters that the user has given based on some assumptions. After that we had to implement another assembly routine which would compute the onedigit of the hash and its factorial, while later it will store its value in memory and will return it in main.The hash will be calculated by the below ***lookup_table***.
   
 ### lookup_table ###
 
@@ -48,8 +48,14 @@ Team : 5
  
  * In the assembly function we use a while loop to read each character of the string and if the ` s[i] == '\0' ` we break the loop and exit the funciton.
  * After that we check if the character of the string is between **a-z**. If yes we add to the hash its hash_value based on the **lookup_table**.
- * On the next step we check if the character of the string is a number between **0-9**.
+ * On the next step we check if the character of the string is a number between **0-9**. If yes we substract from the hash the number.
+ * If the character is not between **a-z** neither **0-9** we check for the next char until we finish.
 
 
 
-### Assembly rotuine for factorial compute: ###
+### Assembly routine for factorial compute: ###
+  In the same .s file we built the factorial_function that takes as an argument the hash which was calculated before by the hash_function. The argument of the function is been stored in `r0`. We also save argument value in the temp register `r3`.Afte that we initialise the registers we want to use (`r2, r11, r12`).
+  
+ * 
+
+
